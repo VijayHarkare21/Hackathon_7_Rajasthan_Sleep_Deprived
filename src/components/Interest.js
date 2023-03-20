@@ -2,6 +2,7 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 import axios from 'axios'
 import { Link } from "react-router-dom";
+import background from "../assets/bg3.jpg"
 
 const questions = ["1. What do you find most interesting about your work or field?",
     "2. How do you stay up to date with new developments in your industry?",
@@ -25,8 +26,20 @@ const Interest = () => {
     questions.forEach((question, index) => {
         questionsList.push(<li key={index}>{question}</li>);
       });
+    
+      const myStyle={
+        backgroundImage: `url(${background})`,
+        // height:'100vh',
+        // marginTop:'-70px',
+        // fontSize:'50px',
+        width: '100vw',
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+    };
 
     return (
+    <div style={myStyle}>
     <form onSubmit={async (e) => {
         e.preventDefault();
         // const axios = require('axios');
@@ -79,12 +92,17 @@ const Interest = () => {
             }
         )
     }}>
+    <div className="text-center p-10 font-bold text-5xl">
+        <label className="max-w-[200px] text-center border p-12 w-full my-5 py-2 text-white justify-center rounded-lg">
+            Interest Form
+        </label>
+    </div>
     <div>   
     {/* <ul>{questionsList}</ul> */}
     {questions.map((question, i) => (
-            <h1>
-                <ul key={i}>{question}</ul>
-            <textarea rows="12" cols="50" className="border p-2 hover:border-blue-400 rounded-lg" value={responses[i]} onChange={(e) => {
+            <h1 className="flex flex-col p-8">
+                <ul key={i} className="font-semibold text-2xl">{question}</ul>
+            <textarea rows="12" cols="50" className="max-w-[1400px] border p-2 hover:border-blue-400 rounded-lg" value={responses[i]} onChange={(e) => {
                 setResponses(res => {
                     const newRes = [...res];
                     newRes[i] = e.target.value;
@@ -94,16 +112,19 @@ const Interest = () => {
             </h1>
             ))}
     </div>
+    <div className="text-center">
             {success ?(
             <Link to="/courses">
             <button type="submit"
-            className="border w-full my-5 py-2 bg-blue-600 text-white">Submit
+            className="max-w-[200px] text-center border w-full my-5 py-2 bg-blue-600 text-white justify-center">Submit
             </button></Link>) : (
             <button type="submit"
-            className="border w-full my-5 py-2 bg-blue-600 text-white">Submit
+            className="max-w-[200px] text-center border w-full my-5 py-2 bg-blue-600 text-white justify-center">Submit
             </button>
             )}
+    </div>
     </form>
+    </div>
     );
 }
 

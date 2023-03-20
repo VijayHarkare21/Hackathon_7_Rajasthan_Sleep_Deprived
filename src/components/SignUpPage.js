@@ -92,7 +92,7 @@ async function integrate() {
               </button>
             </Link>
           ) : (
-            <Link to="/signup">
+            <Link to="/interest_form">
               <button
                 className="w-full py-2 my-4 bg-blue-600  text-white
 
