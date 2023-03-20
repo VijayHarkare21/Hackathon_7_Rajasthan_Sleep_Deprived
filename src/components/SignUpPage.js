@@ -81,7 +81,7 @@ async function integrate() {
             />
           </div>
           {setSuccess ? (
-            <Link to="/login">
+            <Link to="/">
               <button
                 className="w-full py-2 my-4 bg-blue-600  text-white
 
@@ -110,7 +110,7 @@ async function integrate() {
           >
             Already a member?
           </p>
-          <Link to="/login">
+          <Link to="/">
             <p className="hover:text-blue-600 font-semibold text-center text-base text-black">
               Login
             </p>

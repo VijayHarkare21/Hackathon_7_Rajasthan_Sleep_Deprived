@@ -131,7 +131,7 @@ const Courses = () => {
           </div>
         </div>
       </div>
-      <Link to="/login">
+      <Link to="/">
       <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full float-right mr-10" onClick={()=>{setReadMore(!readMore)}}><h2>{linkName}</h2></button>
       </Link>
       {readMore && extraContent}
