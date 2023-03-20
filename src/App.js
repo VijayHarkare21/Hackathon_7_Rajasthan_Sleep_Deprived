@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Courses from "./components/Courses";
 import LoginPage from "./components/LoginPage";
 import SignUpPage from "./components/SignUpPage";
+import Game from "./components/Games/Game";
+import New from "./components/New";
 function App() {
   return (
     <>
@@ -29,6 +31,14 @@ function App() {
             element={
               <>
                 <SignUpPage />
+              </>
+            }
+          ></Route>
+          <Route
+            path="/game"
+            element={
+              <>
+                <Game />
               </>
             }
           ></Route>
