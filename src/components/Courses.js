@@ -7,6 +7,7 @@ import Row from 'react-bootstrap/Row';
 // import {data} from '../../../data'
 
 import { Cards }  from './Cards';
+import { Link } from "react-router-dom";
 
 // import styles from './Shop.module.scss';
 
@@ -130,8 +131,9 @@ const Courses = () => {
           </div>
         </div>
       </div>
-
+      <Link to="/login">
       <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full float-right mr-10" onClick={()=>{setReadMore(!readMore)}}><h2>{linkName}</h2></button>
+      </Link>
       {readMore && extraContent}
 
       <div className="m-10">
